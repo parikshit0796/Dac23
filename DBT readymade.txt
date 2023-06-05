@@ -1,0 +1,22 @@
+create database company;
+
+use company;
+
+create table emp(id int primary key auto_increment, fname varchar(20), lname varchar(20),salary double(6,2),joindate date,dept enum('hr','maint','manage','dev')default 'hr',city varchar(10));
+
+ insert into emp
+     (fname,lname,salary,joindate,dept,city)values
+     ('chandan','bile',123.36,'2023-01-01',default,'mumbai'),
+     ('saurabh','khade',256.36,'2022-01-01','manage','sangli'),
+     ('vidyas','ugale',1256.36,'2020-01-01','maint','nashik'),
+     ('Abhishek','yadav',5236.2,'2019-01-01','dev','indore'),
+     ('ayushi','malvia',256.36,'2020-01-01',default,'patna'),
+     ('pallavi','chaudhari',1525.23,'2017-01-01','maint','nagpur'),
+     ('sandeep','nikam',6525.23,'2018-01-01','manage','satara'),
+     ('akshay','nikam',2525.23,'2019-01-01','dev','nashik'),
+     ('ram','patil',625.23,'2023-01-01','dev','mumbai'),
+     ('shubham','deshmukh',1625.23,'2020-01-01','dev','pune');
+
+ ALTER table emp add column gender ENUM('m','f') default 'm';
+
+ update emp set gender='f' where id in(5,6);
